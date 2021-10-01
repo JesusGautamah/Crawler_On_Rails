@@ -1,0 +1,2 @@
+class CrawledNews < ApplicationRecord
+end

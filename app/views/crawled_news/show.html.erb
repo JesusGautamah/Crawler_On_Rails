@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crawled_news.title %>
+</p>
+
+<p>
+  <strong>Publish date:</strong>
+  <%= @crawled_news.publish_date %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @crawled_news.subtitle %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @crawled_news.body %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @crawled_news.link %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @crawled_news.url %>
+</p>
+
+<%= link_to 'Edit', edit_crawled_news_path(@crawled_news) %> |
+<%= link_to 'Back', crawled_news_index_path %>
