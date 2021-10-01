@@ -4,4 +4,19 @@ Rails.application.routes.draw do
 
   root to: "crawled_news#index"
   get "news_factory", to: "crawled_news#news_factory"
+
+  namespace :api do
+    namespace :v1 do
+
+      resources :crawled_news 
+
+      
+      get "/news_factory/", to:  "crawled_news#news_factory"
+
+      root to: "crawled_news#index"
+
+      
+
+    end
+  end
 end

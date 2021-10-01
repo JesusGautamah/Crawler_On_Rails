@@ -68,10 +68,12 @@ class CrawledNewsController < ApplicationController
     last = params[:last]
 
 
-    CrawlerJob.perform_later(version_control,limit,last)
+    CrawlerJob.perform_later(version_control,last)
 
-
-    render json: "Started To Mine"
+    respond_to do |format|
+          format.html { redirect_to root_url, notice: "Started To Mine" }
+    end
+    
 
   end
 
