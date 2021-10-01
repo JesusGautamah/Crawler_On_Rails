@@ -12,6 +12,9 @@ gem 'bootstrap', '~> 4.1.0'
 # Pagy gem for pagination
 gem 'pagy'
 
+# pg search for  full text search
+gem 'pg_search'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
