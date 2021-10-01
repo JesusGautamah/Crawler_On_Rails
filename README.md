@@ -126,7 +126,7 @@
 
 5) if u r using wsl, run this command on windows powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)
 
-                netsh interface portprocy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
+                netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
 
 
 ## * **API params**
