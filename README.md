@@ -1,18 +1,29 @@
 # **Crawler On Rails**
 
-**Projeto criado para teste da empresa Data Science Bragade**
-**Crawler adicionad ao Active Jobs com Sidekiq e Redis para processos em Background.**
-**Ao inves de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura alicação flutter para portfolio.**
+### **Projeto criado para teste da empresa Data Science Bragade.**
+### **Crawler adicionado ao Active Jobs com Sidekiq e Redis para processos em Background.**
+### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
+### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
 
 
-* **Ruby 2.7**
-* **Rails 5.2.6**
+## * **Routes**
+1) root on crawled_news index + filters (app and api) 
+2) crawled_news show (appo only)
+3) mine information on /news_factory (app and api)
 
-* **System dependencies**
+
+
+
+
+
+## * **Ruby 2.7**
+## * **Rails 5.2.6**
+
+## * **System dependencies**
 1) Postgresql
 2) Redis Server
 
-* **Configuration**
+## * **Configuration**
 1) Install dependencies
 
                 bundle install
@@ -59,38 +70,38 @@
 
 
 
-* **Database creation**
+## * **Database creation**
 1) run 
 
                 rake db:create
                 
     
 
-* **Database initialization**
+## * **Database initialization**
 
  1) run 
 
                 rake db:migrate
 
-* **OR Database creation & initialization**
+## * **OR Database creation & initialization**
 
  1) run 
 
                 rake db:setup
 
-* Rspec test
+## * **Rspec test**
 1) run
 
                 rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+## * **Services (job queues, cache servers, search engines, etc.)**
 
 1) Crawler job
 
 
     **Can be activated in /news_factory or /api/v1/news_factory routes to mine site news**
 
-* Init the app
+## * **Init the app**
 
 1) to start redis server run
                 
@@ -113,6 +124,24 @@
 
                 netsh interface portprocy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
 
+
+## * **API params**
+
+
+                params[:start] # start date filter
+                params[:end] # end date filter
+                params[:title_search] # title filter
+                params[:text_search] # text body filter
+
+                # work separately
+                params[:full_text] # full text search
+
+
+
+## * **API endpoints**
+
+                http://localhost:3000/api/v1/crawled_news + params
+                http://localhost:3000/api/v1/news_factory
 
 
 
