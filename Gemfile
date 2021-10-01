@@ -6,6 +6,12 @@ ruby '2.7.0'
 # Use open-uri for requests
 gem 'open-uri'
 
+# Redis server for Sidekiq
+gem 'redis'
+
+#Sidekiq for async jobs
+gem 'sidekiq'
+
 # Bootstrap stylesheet
 gem 'bootstrap', '~> 4.1.0'
 
