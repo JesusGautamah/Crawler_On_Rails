@@ -2,6 +2,7 @@
 
 
 * **Ruby 2.7**
+* **Rails 5.2.6**
 
 * **System dependencies**
 1) Postgresql

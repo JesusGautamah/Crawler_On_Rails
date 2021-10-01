@@ -19,6 +19,20 @@ class CrawledNewsController < ApplicationController
   def edit
   end
 
+  def news_factory
+
+    limit = params[:limit]
+    version_control = params[:version_control]
+    last = params[:last]
+
+ 
+    CrawlerJob.perform_later(version_control,limit,last)
+ 
+   
+    render json: "Started To Mine"
+    
+  end
+
   # POST /crawled_news or /crawled_news.json
   def create
     @crawled_news = CrawledNews.new(crawled_news_params)
