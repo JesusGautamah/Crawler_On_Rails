@@ -3,11 +3,11 @@ class CrawledNewsController < ApplicationController
 
   # GET /crawled_news or /crawled_news.json
   def index
-    
+    #inicializando variaveis para o search
     @news_filter = CrawledNews.new
     @news_search = CrawledNews.new
 
-
+    # verificações de parametros
     unless params[:start] && params[:end]
 
       unless params[:full_text]

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  # configuração do sidekiq
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   root to: "crawled_news#index"
   get "news_factory", to: "crawled_news#news_factory"
 
+  #api mode
   namespace :api do
     namespace :v1 do
 

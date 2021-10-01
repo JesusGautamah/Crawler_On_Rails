@@ -1,20 +1,31 @@
 # **Crawler On Rails**
 
+**Projeto criado para teste da empresa Data Science Bragade**
+**Crawler adicionad ao Active Jobs com Sidekiq e Redis para processos em Background.**
+**Ao inves de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura alicação flutter para portfolio.**
+
 
 * **Ruby 2.7**
 * **Rails 5.2.6**
 
 * **System dependencies**
 1) Postgresql
+2) Redis Server
 
 * **Configuration**
-1) Edit exports.sh with your postgres database login
+1) Install dependencies
+
+                bundle install
+
+
+
+2) Edit exports.sh with your postgres database login
 
 
                 export DB_USER="YOUR DB USER"
                 export DB_PASS="YOUR DB PASSWORD"
 
-2) Or edit databse configuration on /config/database.yml
+3) Or edit databse configuration on /config/database.yml
 
                 default: &default
                     adapter: postgresql
@@ -74,6 +85,34 @@
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+1) Crawler job
 
-* ...
+
+    **Can be activated in /news_factory or /api/v1/news_factory routes to mine site news**
+
+* Init the app
+
+1) to start redis server run
+                
+                redis-server
+
+2) to start sidekiq run
+
+                bundle exec sidekiq -q high_priority
+
+3) run puma server
+
+                rails s
+
+4) optional run on 0.0.0.0 to access rails in local devices
+
+                rails s -b 0.0.0.0
+
+
+5) if u r using wsl, run this command on powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)
+
+                netsh interface portprocy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
+
+
+
+

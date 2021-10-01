@@ -1,11 +1,19 @@
 class Api::V1::CrawledNewsController < Api::V1::ApiController
-
+   
     def index
 
         unless params[:start] && params[:end]
 
-             @crawled_news =  CrawledNews.search_like('title', params[:title_search]).search_like(' subtitle', params[:text_search]).order("publish_date") 
-            
+             
+             unless params[:full_text]
+
+               @pagy, @crawled_news = CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date")
+       
+             else
+              
+               @pagy, @crawled_news = CrawledNews.search_news(params[:full_text]).order("publish_date")
+       
+             end
       
           else
       
@@ -27,9 +35,11 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
       
               end
       
-              unless params[:start].to_date && params[ :end ].to_date
-                 @crawled_news =  CrawledNews.search_like('title', params[:title_search]).search_like(' subtitle', params[:text_search]).order("publish_date")
-              end
+               unless params[:full_text]
+                  @crawled_news = CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date")
+               else
+                  @crawled_news = CrawledNews.search_news(params[:full_text]).order("publish_date")
+               end
       
       
             end
