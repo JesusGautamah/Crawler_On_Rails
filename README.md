@@ -5,6 +5,8 @@
 ### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
 ### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
 
+### **Pagina http://mds.gov.br/area-de-imprensa/noticias não está disponivel, crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
+
 
 ## * **Routes**
 1) root on crawled_news index + filters (app and api) 
