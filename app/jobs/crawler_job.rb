@@ -75,7 +75,7 @@ class CrawlerJob < ApplicationJob
     end
 
 
-    def request_job(version_num=nil, limit=nil, last=nil )
+    def request_job(version_num=nil, last=nil )
 
 
         if last && last.to_i >= 1
@@ -83,11 +83,11 @@ class CrawlerJob < ApplicationJob
         end
        
 
-        ((last_id || (version_num || 0))..( limit || 300 )).step(10) do |n|
+        ((last_id || (version_num || 0)).. 300 ).step(10) do |n|
             request_news(n)
             puts(n)
-            if n != 0
-                puts( (n*100/( limit || 300 )).to_s + "%")
+            unless n == 0
+                puts( (n*100/300).to_s + "%")
             else
                 puts("0%")
             end
@@ -97,9 +97,9 @@ class CrawlerJob < ApplicationJob
 
     end
     
-    def perform(version_num=nil, limit=nil,last=nil)
+    def perform(version_num=nil, last=nil)
         
-       request_job(version_num.to_i,limit.to_i,last.to_i)
+       request_job(version_num.to_i, last.to_i)
 
     end
 

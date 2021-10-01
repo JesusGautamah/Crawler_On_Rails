@@ -10,6 +10,21 @@ class CrawledNewsController < ApplicationController
   def show
   end
 
+  # Minera os dados do site
+  def news_factory
+
+    
+    version_control = params[:version_control]
+    last = params[:last]
+
+
+    CrawlerJob.perform_later(version_control,limit,last)
+
+
+    render json: "Started To Mine"
+
+  end
+
   # GET /crawled_news/new
   
   private
