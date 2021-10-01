@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @crawled_news.title %>
+  <div class="section-title"> <p style="font-size: 25px;"><%= @crawled_news.title %></p></div>
+  
+  
 </p>
 
 <p>
-  <strong>Publish date:</strong>
+  <strong>Publicado em:</strong>
   <%= @crawled_news.publish_date %>
 </p>
 
 <p>
-  <strong>Subtitle:</strong>
-  <%= @crawled_news.subtitle %>
+  
+  <h4><%= @crawled_news.subtitle %></h4>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @crawled_news.body %>
+
+  <%== @crawled_news.body %>
 </p>
 
 <p>
   <strong>Link:</strong>
-  <%= @crawled_news.link %>
+  <a href="<%= @crawled_news.link %>"><%= @crawled_news.link %></a>
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @crawled_news.url %>
+  <strong>Origem:</strong>
+  <a href="<%= @crawled_news.url %>"><%= @crawled_news.url %></a>
 </p>
 
-<%= link_to 'Edit', edit_crawled_news_path(@crawled_news) %> |
-<%= link_to 'Back', crawled_news_index_path %>
+
+<%= button_to 'Back', crawled_news_index_path, class:"crawler-btn", method:"get" %>

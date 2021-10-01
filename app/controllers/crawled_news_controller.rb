@@ -3,7 +3,57 @@ class CrawledNewsController < ApplicationController
 
   # GET /crawled_news or /crawled_news.json
   def index
-   @pagy, @crawled_news = pagy(CrawledNews.all)
+    
+    @news_filter = CrawledNews.new
+    @news_search = CrawledNews.new
+
+
+    unless params[:start] && params[:end]
+
+      unless params[:full_text]
+
+        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date"))
+
+      else
+       
+        @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date"))
+
+      end
+      
+
+    else
+
+     
+
+      if params[:start].to_date && params[ :end ].to_date
+      
+        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_between("publish_date", params[:start].to_date, params[:end].to_date ).order("publish_date") )
+      else
+
+        if params[:start].to_date
+         
+          @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_start("publish_date", params[:start].to_date).order("publish_date"))
+
+        end
+        if params[ :end ].to_date
+         
+          @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_end("publish_date", params[:end].to_date).order("publish_date"))
+
+        end
+
+        unless params[:start].to_date && params[ :end ].to_date
+          unless params[:full_text]
+            @pagy ,@crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date"))
+          else
+            @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date"))
+          end
+        end
+
+
+      end
+  
+    end    
+    
   end
 
   # GET /crawled_news/1 or /crawled_news/1.json
