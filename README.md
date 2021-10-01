@@ -1,15 +1,38 @@
-# Crawler On Rails
+# **Crawler On Rails**
 
 
-* Ruby version
+* **Ruby 2.7**
 
-* System dependencies
+* **System dependencies**
+    1) Postgresql
 
-* Configuration
+* **Configuration**
+    1) Edit exports.sh with your db login
 
-* Database creation
 
-* Database initialization
+                export DB_USER="YOUR DB USER"
+                export DB_PASS="YOUR DB PASSWORD"
+
+
+
+* **Database creation**
+    1) run 
+
+                rake db:create
+                
+    
+
+* **Database initialization**
+
+ 1) run 
+
+                rake db:migrate
+
+* **OR Database creation & initialization**
+
+ 1) run 
+
+                rake db:setup
 
 * How to run the test suite
 
