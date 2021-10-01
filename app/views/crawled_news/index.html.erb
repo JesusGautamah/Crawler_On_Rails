@@ -64,10 +64,9 @@
 <table>
   <thead>
     <tr class="text-center">
-      <th>Titulo/th>
+      <th>Titulo</th>
       <th>Data de Publicação</th>
       <th>Coletado em</th>
-      <th>Url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -78,7 +77,6 @@
         <td><a href="<%= crawled_news.link %>"><%= crawled_news.title %></a></td>
         <td><%= crawled_news.publish_date.strftime('%d/%m/%Y') %></td>
         <td><%= crawled_news.created_at.strftime('%d/%m/%Y') %></td>
-        <td><%= crawled_news.url %></td>
         <td><%= button_to 'Show', crawled_news, class:"crawler-btn", method:"get" %></td>
         
       </tr>
