@@ -5,4 +5,5 @@ class CrawledNews < ApplicationRecord
     validates :body, presence: true
     validates :link, presence: true
     validates :url, presence: true
+    validates_with PublishDateValidator
 end
