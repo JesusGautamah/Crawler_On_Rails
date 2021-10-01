@@ -103,24 +103,28 @@
 
 ## * **Init the app**
 
-1) to start redis server run
+1) run exports.sh (first termminal)
+
+                source exports.sh
+
+1) to start redis server run (second terminal)
                 
                 redis-server
 
-2) to start sidekiq run
+2) to start sidekiq run (third terminal)
 
                 bundle exec sidekiq -q high_priority
 
-3) run puma server
+3) run puma server (first terminal)
 
                 rails s
 
-4) optional run on 0.0.0.0 to access rails in local devices
+4) optional run on 0.0.0.0 to access rails in local devices (first terminal)
 
                 rails s -b 0.0.0.0
 
 
-5) if u r using wsl, run this command on powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)
+5) if u r using wsl, run this command on windows powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)
 
                 netsh interface portprocy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
 
