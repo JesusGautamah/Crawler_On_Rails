@@ -4,10 +4,10 @@
 * **Ruby 2.7**
 
 * **System dependencies**
-    1) Postgresql
+1) Postgresql
 
 * **Configuration**
-    1) Edit exports.sh with your db login
+1) Edit exports.sh with your db login
 
 
                 export DB_USER="YOUR DB USER"
@@ -16,7 +16,7 @@
 
 
 * **Database creation**
-    1) run 
+1) run 
 
                 rake db:create
                 
