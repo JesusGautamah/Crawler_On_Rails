@@ -6,6 +6,12 @@ ruby '2.7.0'
 # Use open-uri for requests
 gem 'open-uri'
 
+# Bootstrap stylesheet
+gem 'bootstrap', '~> 4.1.0'
+
+# Pagy gem for pagination
+gem 'pagy'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
