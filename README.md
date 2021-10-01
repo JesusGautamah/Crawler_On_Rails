@@ -34,7 +34,10 @@
 
                 rake db:setup
 
-* How to run the test suite
+* Rspec test
+1) run
+
+                rspec
 
 * Services (job queues, cache servers, search engines, etc.)
 
