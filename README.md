@@ -101,7 +101,7 @@
 1) Crawler job
 
 
-    **Can be activated in /news_factory or /api/v1/news_factory routes to mine site news**
+    **Can be activated in /news_factory or /api/v1/news_factory routes to data mine site news**
 
 ## * **Init the app**
 
@@ -134,9 +134,9 @@
 ## * **APP/API params for mine news data on /news_factory**
 
 
-                params[:version_controll] # start mine from given integer in param
+                params[:version_controll] # start data mine from given integer in param
 
-                params[:last] # start mine from last crawled_news id if setted to a number >= 1
+                params[:last] # start data mine from last crawled_news id if setted to a number >= 1
 
 
 
