@@ -5,7 +5,7 @@
 ### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
 ### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
 
-### **Pagina http://mds.gov.br/area-de-imprensa/noticias não está disponivel, crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
+### **Pagina http://mds.gov.br/area-de-imprensa/noticias não está disponivel(offline), crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
 
 
 ## * **Routes**
@@ -144,7 +144,7 @@
                 params[:limit] # REMOVED control limit of catching pages , stopping job on currently rails 5.2 of this project, tested on rails 7.0 alpha and worked, maybe will be added to a new branch
                 
 
-## * **API params**
+## * **API Crawled News Index params**
 
 
                 params[:start] # start date filter
@@ -160,7 +160,7 @@
 ## * **API endpoints**
 
                 http://localhost:3000/api/v1/crawled_news + params
-                http://localhost:3000/api/v1/news_factory
+                http://localhost:3000/api/v1/news_factory + params
 
 
 
