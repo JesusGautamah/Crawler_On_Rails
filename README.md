@@ -105,48 +105,45 @@
 
 ## * **Init the app**
 
-1) run exports.sh (first termminal)
+1) run exports.sh (first(rails) & third(sidekiq) termminal)
 
                 source exports.sh
 
-1) to start redis server run (second terminal)
+1) to start redis server run (second terminal)(redis)
                 
                 redis-server
 
-2) to start sidekiq run (third terminal)
+2) to start sidekiq run (third terminal)(sidekiq)
 
                 bundle exec sidekiq -q high_priority
 
-3) run puma server (first terminal)
+3) run puma server (first terminal)(rails)
 
                 rails s
 
-4) optional run on 0.0.0.0 to access rails in local devices (first terminal)
+4) optional run on 0.0.0.0 to access rails in local devices (first terminal)(rails)
 
                 rails s -b 0.0.0.0
 
 
-5) if u r using wsl, run this command on windows powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)
+5) if u r using wsl, run this command on windows powrshell to run on 0.0.0.0 and access rails in local devices (administrator only)(windows powershell)
 
                 netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectadress=YOUR-WSL-INET-IP
 
-
-<<<<<<< Updated upstream
-=======
 
 ## * **APP/API params for mine news data on /news_factory**
 
 
                 params[:version_controll] # start mine from given integer in param
-                params[:last] # start mine from last crawled_news id if setted to a number > 1
+
+                params[:last] # start mine from last crawled_news id if setted to a number >= 1
+
 
 
 
                 params[:limit] # REMOVED control limit of catching pages , stopping job on currently rails 5.2 of this project, tested on rails 7.0 alpha and worked, maybe will be added to a new branch
                 
 
-
->>>>>>> Stashed changes
 ## * **API params**
 
 

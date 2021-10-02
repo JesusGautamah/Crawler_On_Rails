@@ -7,11 +7,11 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
              
              unless params[:full_text]
 
-               @pagy, @crawled_news = CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date")
+               @crawled_news = CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date")
        
              else
               
-               @pagy, @crawled_news = CrawledNews.search_news(params[:full_text]).order("publish_date")
+               @crawled_news = CrawledNews.search_news(params[:full_text]).order("publish_date")
        
              end
       
