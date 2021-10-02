@@ -10,7 +10,7 @@
 
 ## * **Routes**
 1) root on crawled_news index + filters (app and api) 
-2) crawled_news show (appo only)
+2) crawled_news show (app only)
 3) mine information on /news_factory (app and api)
 
 
