@@ -4,16 +4,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 
+# GEMS FOR API MODE
+
+	
+gem 'rack-cors'
+
+	
+gem 'rack-attack'
+
 
 
 # Use open-uri for requests
 gem 'open-uri'
-
-# Redis server for Sidekiq
-gem 'redis'
-
-#Sidekiq for async jobs
-gem 'sidekiq'
 
 # Bootstrap stylesheet
 gem 'bootstrap', '~> 4.1.0'
