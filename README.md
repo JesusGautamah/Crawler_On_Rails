@@ -1,6 +1,6 @@
 # **Crawler On Rails**
 
-### **Projeto criado para teste da empresa Data Science Bragade.**
+### **Projeto criado para teste da empresa Data Science Brigade.**
 ### **Crawler adicionado ao Active Jobs com Sidekiq e Redis para processos em Background.**
 ### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
 ### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
