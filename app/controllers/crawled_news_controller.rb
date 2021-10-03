@@ -80,9 +80,10 @@ class CrawledNewsController < ApplicationController
     
     version_control = params[:version_control]
     last = params[:last]
+    limit = params[:limit]
 
 
-    CrawlerJob.perform_later(version_control,last)
+    CrawlerJob.perform_later(version_control,last,limit)
 
     respond_to do |format|
           format.html { redirect_to root_url, notice: "Started To Mine" }
