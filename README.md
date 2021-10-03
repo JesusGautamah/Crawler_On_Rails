@@ -172,7 +172,7 @@
 
 
 
-                params[:limit] # REMOVED control limit of catching pages , stopping job on currently rails 5.2 of this project, tested on rails 7.0 alpha and worked, maybe will be added to a new branch
+                params[:limit] # control limit of catching pages
                 
 
 ## * **API Crawled News Index params**
