@@ -20,10 +20,36 @@
 
 ## * **Ruby 2.7**
 ## * **Rails 5.2.6**
+## * **Web Preview https://crawler-news.herokuapp.com/**
 
 ## * **System dependencies**
 1) Postgresql
 2) Redis Server
+3) Heroku cli
+
+## * **Heroku Config Vars (https://dashboard.heroku.com/apps/YOUR-APPLICATION-NAME/settings)**
+
+                SIDEKIQ_USERNAME: SET SIDEKIQ WEBVIEW USER
+                SIDEKIQ_PASSWORD: SET SIDEKIQ WEBVIEW PASSWORD
+
+## * **Heroku Configuration (HEROKU CLI)**
+
+                 heroku ps:scale web=1 -a YOUR-HEROKU-APP-NAME
+                 heroku ps:scale worker+1 -a YOUR-HEROKU-APP-NAME
+
+## * **Heroku Monitor (HEROKU CLI)**
+
+                 heroku logs --tail -a
+
+
+## * **Sidekiq Web View**
+
+### in route /sidekiq
+### use your heroku config vars sidekiq login
+
+
+
+#  **Local Configuration (MAIN BRANCH ONLY)**
 
 ## * **Configuration**
 1) Install dependencies
