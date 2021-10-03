@@ -1,4 +1,6 @@
 class Api::V1::CrawledNewsController < Api::V1::ApiController
+
+   before_action :set_crawled_news, only: %i[ show ]
    
     def index
 
@@ -68,6 +70,7 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
     def show 
 
       render json: @crawled_news
+
     end
 
       private
