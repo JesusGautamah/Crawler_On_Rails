@@ -20,6 +20,8 @@
 
 ## * **Ruby 2.7**
 ## * **Rails 5.2.6**
+## * **Web Preview https://crawler-news.herokuapp.com/**
+## **Heroku Deployment Config: Heroku Branch!!**
 
 ## * **System dependencies**
 1) Postgresql
