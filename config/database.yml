@@ -85,3 +85,7 @@ production:
   database: crawler_on_rails_production
   username: crawler_on_rails
   password: <%= ENV['CRAWLER_ON_RAILS_DATABASE_PASSWORD'] %>
+
+
+
+url: <%= ENV['DATABASE_URL'] %>
