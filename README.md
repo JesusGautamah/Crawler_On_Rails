@@ -48,6 +48,11 @@
 ### use your heroku config vars sidekiq login
 
 
+## * **Sidekiq Web View Preview**
+
+### in route  https://crawler-news.herokuapp.com/sidekiq
+### Username: Admin
+### Password: 0F2D2FA54BE36031D46155C70A2A2458
 
 #  **Local Configuration (MAIN BRANCH ONLY)**
 
