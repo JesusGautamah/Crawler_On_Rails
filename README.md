@@ -165,7 +165,7 @@
 ## * **APP/API params for mine news data on /news_factory**
 
 
-                params[:version_controll] # start data mine from given integer in param
+                params[:version_control] # start data mine from given integer in param
 
                 params[:last] # start data mine from last crawled_news id if setted to a number >= 1
 
