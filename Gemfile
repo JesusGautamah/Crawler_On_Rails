@@ -95,3 +95,5 @@ gem 'pg_search'
 
 #not in dependencies 
 gem 'sass-listen' 
+gem 'rb-fsevent'
+gem 'rb-inotify' 
