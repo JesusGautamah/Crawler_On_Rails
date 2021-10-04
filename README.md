@@ -21,6 +21,7 @@
 ## * **Ruby 2.7**
 ## * **Rails 5.2.6**
 ## * **Web Preview https://crawler-news.herokuapp.com/**
+## * **API Consume Preview In Py Notebook https://github.com/JesusGautamah/cn-api-py-nb**
 ## **Heroku Deployment Config: Heroku Branch!!**
 
 ## * **System dependencies**
