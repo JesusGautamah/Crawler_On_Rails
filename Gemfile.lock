@@ -231,7 +231,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -249,12 +248,8 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-attack
   rack-cors
-<<<<<<< HEAD
   rails (~> 5.2.3)
   rails_12factor
-=======
-  rails (~> 5.2.6)
->>>>>>> 6d58050a8cc37e909a8cab9c62be24bc59c647b3
   rb-fsevent
   rb-inotify
   redis
@@ -274,4 +269,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.5
+   2.1.4
