@@ -1,4 +1,6 @@
 class Api::V1::CrawledNewsController < Api::V1::ApiController
+
+   before_action :set_crawled_news, only: %i[ show ]
    
     def index
 
@@ -63,6 +65,23 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
        
         render json: "Started To Mine"
         
+    end
+
+    def show 
+
+      render json: @crawled_news
+
+    end
+
+      private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_crawled_news
+      @crawled_news = CrawledNews.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def crawled_news_params
+      params.require(:crawled_news).permit(:title, :publish_date, :subtitle, :body, :link, :url)
     end
 
    

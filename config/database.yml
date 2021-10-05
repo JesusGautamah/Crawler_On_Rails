@@ -19,6 +19,7 @@ default: &default
   encoding: unicode
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
+  host: db
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -85,3 +86,7 @@ production:
   database: crawler_on_rails_production
   username: crawler_on_rails
   password: <%= ENV['CRAWLER_ON_RAILS_DATABASE_PASSWORD'] %>
+
+
+
+url: <%= ENV['DATABASE_URL'] %>
