@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.4'
 
 
 # GEMS FOR API MODE
@@ -88,3 +88,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+#not in dependencies 
+gem 'sass-listen' 
+gem 'rb-fsevent'
+gem 'rb-inotify' 
