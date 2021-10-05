@@ -8,6 +8,9 @@
 ### **Pagina http://mds.gov.br/area-de-imprensa/noticias não está disponivel(offline), crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
 
 
+## Observações: Utilizar serializer, Trabalhar + no Front com css puro, Priorizar entrega na branch Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook.
+
+
 ## * **Routes**
 1) root on crawled_news index + filters (app and api) 
 2) crawled_news show (app only)
