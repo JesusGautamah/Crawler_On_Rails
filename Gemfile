@@ -4,34 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 
-# GEMS FOR API MODE
-
-
-gem 'rack-cors'
-
-
-gem 'rack-attack'
-
-# Use open-uri for requests
-gem 'open-uri'
-
-# Redis server for Sidekiq
-gem 'redis'
-
-#Sidekiq for async jobs
-gem 'sidekiq'
-
-# Bootstrap stylesheet
-gem 'bootstrap', '~> 4.1.0'
-
-# Pagy gem for pagination
-gem 'pagy'
-
-# pg search for  full text search
-gem 'pg_search'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.6'
+gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -86,5 +60,40 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+ #GEMS FOR API MODE
+
+
+gem 'rack-cors'
+
+
+gem 'rack-attack'
+
+# Use open-uri for requests
+gem 'open-uri'
+
+# Redis server for Sidekiq
+gem 'redis'
+
+#Sidekiq for async jobs
+gem 'sidekiq'
+
+# Bootstrap stylesheet
+gem 'bootstrap', '~> 4.1.0'
+
+# Pagy gem for pagination
+gem 'pagy'
+
+# pg search for  full text search
+gem 'pg_search'
+
+#not in dependencies 
+gem 'sass-listen' 
+gem 'rb-fsevent'
+gem 'rb-inotify' 

@@ -75,7 +75,8 @@ class CrawlerJob < ApplicationJob
     end
 
 
-    def request_job(version_num=nil, last=nil, limit=nil)
+
+    def request_job(version_num=nil, last=nil, limit=nil )
 
 
         if last && last.to_i >= 1

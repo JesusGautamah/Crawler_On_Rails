@@ -8,7 +8,12 @@
 
 <p>
   <strong>Publicado em:</strong>
-  <%= @crawled_news.publish_date %>
+  <%= @crawled_news.publish_date.strftime('%d/%m/%Y') %>
+</p>
+
+<p>
+  <strong>Coletado em:</strong>
+  <%= @crawled_news.created_at.strftime('%d/%m/%Y') %>
 </p>
 
 <p>
