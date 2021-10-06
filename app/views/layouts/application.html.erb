@@ -37,10 +37,8 @@
 
           <ul>
 
-            <li><a class="nav-link" href="/">Home</a></li>         
+            <li><a class="nav-link" href="/">Página Inicial</a></li>
 
-           
-          
             <li class="dropdown"><a class="nav-link" href="https://github.com/JesusGautamah"><span>GitHub</span></a>
               <ul>
                 <!--- GitHub Card ---->
@@ -49,11 +47,19 @@
                   <li><a class="nav-link" href="https://github.com/JesusGautamah">See My Profile!</a></li>         
               </ul>
             
-            </li>
+            </li>&nbsp;&nbsp;&nbsp;
 
           </ul>
+            <%= form_tag(@news_search, method: :get ) do %>
+  
+            <li >
+
+                <%= text_field_tag(:full_text, params[:full_text], style:"width:500px;")  %> &nbsp;&nbsp;&nbsp;  <%= submit_tag ("Pesquisar"), class: "crawler-btn" %> 
+            </li>
+
+            <% end %>      
             
-            <button  class="portfolio-btn mobile-nav-toggle"><a id="nav-toggle" style="margin-left: -25px;margin-top: -10px;right: 150;">menu</a></button>
+            
 
         </nav>  
 
@@ -116,7 +122,6 @@
     el.addEventListener('scroll', listener)
   }
 
-
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
@@ -139,31 +144,6 @@
     window.addEventListener('load', headerScrolled)
     onscroll(document, headerScrolled)
   }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    select('#hide').classList.toogle('sidenav-hidden')
-    
-
-    if (select('#nav-toggle').textContent === "menu") {
-      select('#nav-toggle').innerHTML = "fechar menu"
-    } else {
-      select('#nav-toggle').innerHTML = "menu"
-    }
-  })
-
-   /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
 
 })()
 
