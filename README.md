@@ -29,23 +29,10 @@
 ## **Heroku Deployment Config: Heroku Branch!!**
 
 ## * **System dependencies**
-1) Postgresql
-2) Redis Server
-3) Heroku cli
+1) docker
+2) docker-compose
 
-## * **Heroku Config Vars (https://dashboard.heroku.com/apps/YOUR-APPLICATION-NAME/settings)**
-
-                SIDEKIQ_USERNAME: SET SIDEKIQ WEBVIEW USER
-                SIDEKIQ_PASSWORD: SET SIDEKIQ WEBVIEW PASSWORD
-
-## * **Heroku Configuration (HEROKU CLI)**
-
-                 heroku ps:scale web=1 -a YOUR-HEROKU-APP-NAME
-                 heroku ps:scale worker+1 -a YOUR-HEROKU-APP-NAME
-
-## * **Heroku Monitor (HEROKU CLI)**
-
-                 heroku logs --tail -a
+## * **Heroku Configuration in Heroku Branch**
 
 
 ## * **Sidekiq Web View**
@@ -54,15 +41,16 @@
 ### use your heroku config vars sidekiq login
 
 
-## * **Sidekiq Web View Preview**
-
-### in route  https://crawler-news.herokuapp.com/sidekiq
-### Username: Admin
-### Password: 0F2D2FA54BE36031D46155C70A2A2458
+## **Observações: Utilizar serializer, trabalhar + no Front com css puro, priorizar entregas de produção nas branchs Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook, realizar leitura e analise dos dados carregados, criar seeds para alimentar aplicação ao iniciar o banco de dados.**
 
 #  **Local Docker Configuration** 
 1) run
+
                 docker-compose up
+
+2) create db, in another terminal run
+
+             docker-compose run web rake db:setup
 
 
 
