@@ -60,7 +60,9 @@
 ### Username: Admin
 ### Password: 0F2D2FA54BE36031D46155C70A2A2458
 
-#  **Local Docker Configuration ** 
+#  **Local Docker Configuration** 
+1) run
+                docker-compose up
 
 
 
