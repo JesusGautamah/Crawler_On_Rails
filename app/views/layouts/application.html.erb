@@ -29,13 +29,21 @@
 
         <a href="/" id="title-header" style="margin-left: 25px;">CrawlerOnRails</a>
 
-      </h1>
+      </h1>&nbsp;&nbsp;&nbsp;
+
+      
+
+            
+
+     
 
       <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
    
         <nav id="navbar" class="navbar order-last order-lg-0">
 
           <ul>
+
+             
 
             <li><a class="nav-link" href="/">Página Inicial</a></li>
 
@@ -47,17 +55,19 @@
                   <li><a class="nav-link" href="https://github.com/JesusGautamah">See My Profile!</a></li>         
               </ul>
             
-            </li>&nbsp;&nbsp;&nbsp;
-
-          </ul>
-            <%= form_tag(@news_search, method: :get ) do %>
-  
-            <li >
-
-                <%= text_field_tag(:full_text, params[:full_text], style:"width:500px;")  %> &nbsp;&nbsp;&nbsp;  <%= submit_tag ("Pesquisar"), class: "crawler-btn" %> 
             </li>
 
-            <% end %>      
+          </ul> &nbsp;&nbsp;&nbsp;
+
+          <%= form_tag(@news_search, method: :get ) do %>
+  
+            <li>
+
+                <%= text_field_tag :full_text, params[:full_text], class:"search" %> &nbsp;&nbsp;&nbsp;  <%= submit_tag ("Pesquisar"), class: "crawler-btn" %> 
+            </li>
+
+       <% end %>
+            
             
             
 
@@ -67,10 +77,13 @@
 
     </header>
 
+    
     <%= yield :hero %>
+
+    <%= render :partial => "layouts/sidebar"  %>
     <section class="crawler">
-      <div class="container-fluid section-bg text-center" style="padding: 50px; width: 80%;"> 
-        <div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px;">
+      <div class="container-fluid  text-center" style="padding: 50px; width: 98%;"> 
+        <div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: 65%;">
           <div class="container">
 
             <%= yield %>
@@ -144,6 +157,23 @@
     window.addEventListener('load', headerScrolled)
     onscroll(document, headerScrolled)
   }
+
+
+  /**
+   * Side nav toggle
+   */
+  on('click', '#hide', function(e) {
+    select('#sidenav').classList.toggle('sidenav-hidden')
+    
+
+
+    if (select('#hide').textContent === "fechar") {
+      select('#hide').innerHTML = "filtros"
+    } else {
+      select('#hide').innerHTML = "fechar"
+    }
+      
+  })
 
 })()
 

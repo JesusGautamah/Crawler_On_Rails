@@ -18,6 +18,8 @@
 
     body {
        background-color: #000;
+       background-image: url("bg.jpg");
+       background-size: 60% auto;
        color: #fff;
      }
 
@@ -154,7 +156,7 @@
     --------------------------------------------------------------*/
 
     section {
-        padding: 60px 0;
+        
         overflow: hidden;
     }
   
@@ -213,7 +215,7 @@
         border-radius: 30px;
         box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
         transition: all ease-in-out 0.3s;
-        border: 2px solid #6D7993;
+        border: 2px solid #743ad5;
         background: #000;
         width: 100%;
         margin: 0 auto;
@@ -249,7 +251,6 @@
       }
   
       .crawler .box:hover {
-        background: purple;
         padding: 55px 15px  ;
         box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
       }
@@ -330,7 +331,7 @@
 
     #header .logo a {
       
-      background: -webkit-linear-gradient(#6D7993, purple);
+      background: -webkit-linear-gradient(#fff, purple);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -369,7 +370,7 @@
         background-color: rgba(0,0,0, 0.5);
         margin: 0 auto;
         color: white;
-        
+        width: 600px;
   
       }
   
@@ -377,7 +378,6 @@
       #hero-col:hover {
   
         background-color: rgba(255,255,255, 0.5);
-        padding: 55px 15px  ;
         box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
         background-image: linear-gradient(to left, #743ad5, #d53a9d);
         
@@ -445,10 +445,7 @@
 
 
 
-    .img-home-primary{
-
-     border-radius: 20px;
-    }
+    
     /*--------------------------------------------------------------
     # Navigation Menu
     --------------------------------------------------------------*/
@@ -776,7 +773,173 @@
 
 
 
+    .sidenav {
+
+      justify-items: center;
+      justify-content: center;
+      flex-direction:column;
+      margin-top: 100px;
+      width: 360px;
+      height: auto;
+      position: fixed;
+      z-index: 2;
+      left: 06px;
+      background-color: rgba(0, 0, 0, 0.9);
+      top: 100px;
+      overflow: scroll;
+      color: #d53a9d;
+      
+  
+    }
+
+    @media (max-width: 991px) {
+
+    .sidenav {
+
+      height: 70%;
+      width: 100%;
+      margin-top: 180px;
+    }
+
+    header {
+      height: 140px;
+    }
+
+    .progress-margin {
+      margin-left: 150px;
+    }
+
+    #hide {
+      font-size: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    #nav-toggle {
+      font-size: 40px;
+      
+    }
+
+    #title-header {
+      font-size: 40px;
+    }
+
+    .search  {
+      width:300px;
+      height: 37px;
+    }
+    
+  
+  }
+
+  .sidenav-hidden {
+    display: none;
+  }
+
+  .sidenav::-webkit-scrollbar {
+
+    display: none;
+
+  }
+
+  .sidenav {
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+  }
+
+  .sidenav a {
+
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+
+  }
+
+  .sidenav a:hover {
+
+    color: #064579;
+
+  }
+
+  @media screen and (max-height: 450px) {
+    
+    .sidenav a {font-size: 18px;}
+    .sidenav {padding-top: 15px;}
+
+  }
 
 
 
 
+
+
+
+
+
+
+  .sidebutton {
+
+    justify-items: center;
+    justify-content: center;
+    flex-direction:column;
+    margin-top: 100px;
+    width: 360px;
+    height: 20%;
+    position: fixed;
+    z-index: 2;
+    left: 0px;
+    
+    top: 0;
+    overflow: scroll;
+    color: greenyellow;
+    border-radius: 15px;
+
+  }
+
+  @media (max-width: 991px) {
+
+  .sidebutton {
+
+    height: 70%;
+    width: 100%;
+    margin-top: 180px;
+  }
+
+  
+
+}
+
+
+
+.sidebutton::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+.sidebutton{
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+
+@media screen and (max-height: 450px) {
+  
+  .sidebutton a {font-size: 18px;}
+  .sidebutton {padding-top: 15px;}
+
+}
+
+
+
+
+.search  {
+  width:600px;
+  height: 37px;
+}
