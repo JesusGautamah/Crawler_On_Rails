@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+unless CrawledNews.where(id: 1).exists?
 
-CrawlerJob.perform_later()
+    CrawlerJob.perform_later()
+end

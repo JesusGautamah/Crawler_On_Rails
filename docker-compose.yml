@@ -21,7 +21,9 @@ services:
       - db
     environment: 
       DB_USER: postgres
-      DB_PASS: password       
+      DB_PASS: password
+      SIDEKIQ_USERNAME: sidekiq
+      SIDEKIQ_PASSWORD: password       
 
   redis:
     image: redis:4.0-alpine
