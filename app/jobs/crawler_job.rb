@@ -38,8 +38,10 @@ class CrawlerJob < ApplicationJob
 
         end
 
-        # realiza o request
-        @request = Nokogiri::HTML(URI.open(url))
+        begin
+            # realiza o request
+            @request = Nokogiri::HTML(URI.open(url))
+        
 
         #pegando todas noticias
         @request_CrawledNews = @request.css('ul.noticias')
@@ -61,16 +63,38 @@ class CrawlerJob < ApplicationJob
                 desc = div.css('span.descricao').text.to_s.gsub("\n",'').sub( div.css('span.data').text,'')
 
                 # request na pagina da noticia
-                body = Nokogiri::HTML(URI.open(link))
+                
+
+                begin
+
+                    # realiza o request
+                    body = Nokogiri::HTML(URI.open(link))
+                    #carrega corpo da noticia
+                    body_html = body.at_css('[property="rnews:articleBody"]')
+
+                rescue OpenURI::HTTPError => error
+                    response = error.io
+                    puts(response.status)
+                    # => ["503", "Service Unavailable"] 
+                    #presponse.string
+                    # => <!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html DIR=\"LTR\">\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"initial-scale=1\">...
+                end
 
 
-                #carrega corpo da noticia
-                body_html = body.at_css('[property="rnews:articleBody"]')
+                
                 
                 # metodo de salvamento da função acima
                 save_news( title, date, desc, link, url, body_html)
                 
             end
+
+        rescue OpenURI::HTTPError => error
+            response = error.io
+            puts(response.status)
+            # => ["503", "Service Unavailable"] 
+            #presponse.string
+            # => <!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html DIR=\"LTR\">\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"initial-scale=1\">...
+        end    
 
     end
 
