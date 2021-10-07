@@ -102,5 +102,3 @@
                 http://localhost:3000/api/v1/news_factory + params
 
 
->>>>>>> f416e2fbccc7230eb84a4ff320d8de920b79168a
-
