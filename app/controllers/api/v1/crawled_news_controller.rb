@@ -48,7 +48,7 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
         
           end 
 
-        render json: @crawled_news
+        render json: @crawled_news, adapter: :json_api
         
       
     end
@@ -63,13 +63,13 @@ class Api::V1::CrawledNewsController < Api::V1::ApiController
         NewsJob.perform_later(version_control,last)
      
        
-        render json: "Started To Mine"
+        render json: "Started To Mine", adapter: :json_api
         
     end
 
     def show 
 
-      render json: @crawled_news
+      render json: @crawled_news, adapter: :json_api
 
     end
 
