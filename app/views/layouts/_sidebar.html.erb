@@ -1,0 +1,40 @@
+<div class="fixed-right  sidebutton text-center">
+  <div style="border-radius:360px;margin: 0 auto;">
+   
+
+     
+        <button id="hide" class="crawler-btn">filtros</button>
+      
+
+  </div>
+</div>
+
+
+<div class="fixed-right  sidenav text-center border-gradient border-gradient-purple  sidenav-hidden" style="padding: 20px 20px;"id="sidenav">
+  <div style="border-radius:360px;width:100%;height:auto;margin: 0 auto;">
+   
+   
+        <%= form_tag(@news_filter, method: :get ) do %>
+  
+          
+
+          <span> Titulo: <%= text_field_tag :title_search, params[:title_search]   %></span>
+          <br>
+          <br>
+          <span> Texto: <%= text_field_tag :text_search, params[:text_search] %> </span>
+          <br>
+          <br>
+          <span> Data Inicio: <%= date_field_tag(:start, params[:start] ) %> </span>
+          <br>
+          <br>
+          <span> Data Final: <%= date_field_tag(:end, params[:end] ) %> </span>
+          <br>
+          <br>
+          <%= submit_tag ("Filtrar"), class: "crawler-btn" %>
+
+        
+        <% end %>
+    
+    
+  </div>
+</div>

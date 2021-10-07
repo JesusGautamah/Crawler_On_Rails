@@ -1,88 +1,63 @@
 
+<% content_for :hero do %>
+  <section class="hero" id="hero">
 
+      <div class="container text-center">
+
+            <div class="container text-center border-gradient border-gradient-purple" id="hero-col"  >
+              <div class="row" style="margin-top: -50px; margin-bottom: 50px;">
+                <div class="col text-center">
+                
+                  <%= image_tag "logo.png", style:"height:200px;width:auto;" %>
+                  <h1 style=" font-size: 22px;">Crawler On Rails</h1>
+                  <h1 style=" font-size: 22px;">API on /api/v1</h1>
+                  
+
+                </div>
+
+              
+              
+              
+              </div>
+              </div>
+              
+            </div>
+          </div>
+          
+
+      </div>
+
+    </section>
+<% end %>
 <p id="notice"><%= notice %></p>
-
-<div class="section-title">
-  <p>Crawled News</p>
-  <br>
- 
-</div>
 
 <div class="row">
 
-<%= form_tag(@news_search, method: :get ) do %>
-  
-  <div class="col text-center" style="margin: 0 auto;">
 
 
-  <br>
-  <br>  
 
-  <h6> Pesquisar: <%= text_field_tag(:full_text, params[:full_text], style:"width:300px;")  %></h6>
+
 
   
- 
-  <%= submit_tag ("Pesquisar"), class: "crawler-btn" %>
-
-  </div>
   <br>
   
 
-<% end %>
 
-<div class="col text-center" style="margin: 0 auto;">
-<br>
-<br>
-<p style="font-size:30px"> <strong> OU </strong> </p>
-</div>
-
-
-  <%= form_tag(@news_filter, method: :get ) do %>
-  
-  <div class="col text-center" style="margin: 0 auto;">
-
-
-  <h6> Titulo: <%= text_field_tag(:title_search, params[:title_search], style:"width:300px;")  %></h6>
-  
-  <h6> Texto: <%= text_field_tag(:text_search, params[:text_search], style:"width:300px;") %> </h6>
-  
-  <h6> Data Inicio: <%= date_field_tag(:start, params[:start], style:"width:256px;") %> </h6>
-  
-  <h6> Data Final: <%= date_field_tag(:end, params[:end], style:"width:260px;") %> </h6>
-
-  <%= submit_tag ("Filtrar"), class: "crawler-btn" %>
-
-  </div>
-  <br>
-  
-
-<% end %>
 
 </div>
 
 <%= pagy_bootstrap_nav(@pagy).html_safe %>
-<table>
-  <thead>
-    <tr class="text-center">
-      <th>Titulo</th>
-      <th>Data de Publicação</th>
-      <th>Coletado em</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
     <% @crawled_news.each do |crawled_news| %>
-      <tr class="text-center">
-        <td><a href="<%= crawled_news.link %>"><%= crawled_news.title %></a></td>
-        <td><%= crawled_news.publish_date.strftime('%d/%m/%Y') %></td>
-        <td><%= crawled_news.created_at.strftime('%d/%m/%Y') %></td>
-        <td><%= button_to 'Show', crawled_news, class:"crawler-btn", method:"get" %></td>
-        
-      </tr>
+        <div class="col box">
+        <h5><%= crawled_news.title %></h5><br>
+        Publicado em:&nbsp;<%= crawled_news.publish_date.strftime('%d/%m/%Y') %><br>
+        Coletado em:&nbsp;<%= crawled_news.created_at.strftime('%d/%m/%Y') %><br>
+       <%= button_to 'Ler Noticia', crawled_news, class:"crawler-btn", method:"get" %>
+        </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 

@@ -22,9 +22,68 @@
   </head>
 
   <body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+
+      <!--- Logo ---->
+      <h1 class="logo me-auto me-lg-0">
+
+        <a href="/" id="title-header" style="margin-left: 25px;">CrawlerOnRails</a>
+
+      </h1>&nbsp;&nbsp;&nbsp;
+
+      
+
+            
+
+     
+
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+   
+        <nav id="navbar" class="navbar order-last order-lg-0">
+
+          <ul>
+
+             
+
+            <li><a class="nav-link" href="/">Página Inicial</a></li>
+
+            <li class="dropdown"><a class="nav-link" href="https://github.com/JesusGautamah"><span>GitHub</span></a>
+              <ul>
+                <!--- GitHub Card ---->
+                  <div class="github-card" data-github="JesusGautamah" data-width="300" data-height="170" data-theme="default"></div>
+                  <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+                  <li><a class="nav-link" href="https://github.com/JesusGautamah">See My Profile!</a></li>         
+              </ul>
+            
+            </li>
+
+          </ul> &nbsp;&nbsp;&nbsp;
+
+          <%= form_tag(@news_search, method: :get ) do %>
+  
+            <li>
+
+                <%= text_field_tag :full_text, params[:full_text], class:"search" %> &nbsp;&nbsp;&nbsp;  <%= submit_tag ("Pesquisar"), class: "crawler-btn" %> 
+            </li>
+
+       <% end %>
+            
+            
+            
+
+        </nav>  
+
+      </div>
+
+    </header>
+
+    
+    <%= yield :hero %>
+
+    <%= render :partial => "layouts/sidebar"  %>
     <section class="crawler">
-      <div class="container-fluid section-bg text-center" style="padding: 50px; width: 80%;"> 
-        <div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px;">
+      <div class="container-fluid  text-center" style="padding: 50px; width: 98%;"> 
+        <div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: 65%;">
           <div class="container">
 
             <%= yield %>
@@ -33,5 +92,91 @@
         </div>
       </div>
     </section>
+
+    <script>
+
+  
+
+    (function() {
+  "use strict";
+
+ 
+    
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
+
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
+
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  let selectTopbar = select('#topbar')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+        if (selectTopbar) {
+          selectTopbar.classList.add('topbar-scrolled')
+        }
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+        if (selectTopbar) {
+          selectTopbar.classList.remove('topbar-scrolled')
+        }
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
+
+
+  /**
+   * Side nav toggle
+   */
+  on('click', '#hide', function(e) {
+    select('#sidenav').classList.toggle('sidenav-hidden')
+    
+
+
+    if (select('#hide').textContent === "fechar") {
+      select('#hide').innerHTML = "filtros"
+    } else {
+      select('#hide').innerHTML = "fechar"
+    }
+      
+  })
+
+})()
+
+  </script>
   </body>
 </html>
