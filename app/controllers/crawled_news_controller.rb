@@ -1,25 +1,21 @@
 class CrawledNewsController < ApplicationController
   before_action :set_crawled_news, only: %i[ show ]
 
+
+  
+
   # GET /crawled_news or /crawled_news.json
   def index
     
-    #inicializando variaveis para o search
-    @news_filter = CrawledNews.new
-    @news_search = CrawledNews.new
-
-    
     unless params[:start] && params[:end] # caso não houver filtras de inicia e fim de data
-
-      
       
       unless params[:full_text] # caso não for full text search
         
-        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date"))
+        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date DESC"))
 
       else # caso for full text search
        
-        @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date"))
+        @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date DESC"))
 
       end
       
@@ -32,13 +28,13 @@ class CrawledNewsController < ApplicationController
 
 
       
-        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_between("publish_date", params[:start].to_date, params[:end].to_date ).order("publish_date") )
+        @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_between("publish_date", params[:start].to_date, params[:end].to_date ).order("publish_date DESC") )
 
       else
 
         if params[:start].to_date # caso filtro de inicio de periodo corresponder com uma data 
          
-          @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_start("publish_date", params[:start].to_date).order("publish_date"))
+          @pagy, @crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).search_start("publish_date", params[:start].to_date).order("publish_date DESC"))
 
         end
 
@@ -53,11 +49,11 @@ class CrawledNewsController < ApplicationController
 
           unless params[:full_text] # caso não for full text search
 
-            @pagy ,@crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date"))
+            @pagy ,@crawled_news = pagy(CrawledNews.search_like('title', params[:title_search]).search_like('body', params[:text_search]).order("publish_date DESC"))
 
           else # caso for full text search
 
-            @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date"))
+            @pagy, @crawled_news = pagy(CrawledNews.search_news(params[:full_text]).order("publish_date DESC"))
 
           end
 
@@ -66,12 +62,16 @@ class CrawledNewsController < ApplicationController
 
       end
   
-    end    
+    end  
     
   end
 
   # GET /crawled_news/1 or /crawled_news/1.json
   def show
+    
+    if params[:start] || params[:end] || params[:full_text] || params[:text_search] || params[:title_search]
+      redirect_to root_path(params.permit!)
+    end
   end
 
   # Minera os dados do site
@@ -103,5 +103,6 @@ class CrawledNewsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def crawled_news_params
       params.require(:crawled_news).permit(:title, :publish_date, :subtitle, :body, :link, :url)
+      
     end
 end

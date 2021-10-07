@@ -92,8 +92,6 @@ class CrawlerJob < ApplicationJob
             response = error.io
             puts(response.status)
             # => ["503", "Service Unavailable"] 
-            #presponse.string
-            # => <!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html DIR=\"LTR\">\n<head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"initial-scale=1\">...
         end    
 
     end
