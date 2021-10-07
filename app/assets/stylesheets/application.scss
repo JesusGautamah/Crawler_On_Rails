@@ -19,7 +19,7 @@
     body {
        background-color: #000;
        background-image: url("bg.jpg");
-       background-size: 60% auto;
+       background-size: 50% auto;
        color: #fff;
      }
 
@@ -114,6 +114,7 @@
             font-weight: 500;
             letter-spacing: 1px;
             text-decoration: none;
+            border-radius: 50px;
       
           }
       
@@ -146,8 +147,9 @@
           
       
           li.page-item.active a.page-link {
-            background: black;
+            background: white;
             border: 2px solid black;
+            color: black;
           }
     
 
