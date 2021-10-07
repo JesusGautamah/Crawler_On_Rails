@@ -104,7 +104,14 @@
         /*--------------------------------------------------------------
             # Pagy Bootstrap edit
         --------------------------------------------------------------*/
-
+        .pagy-bootstrap-nav{
+          width: auto;
+          height: auto;
+        }
+        .pagination {
+          width: auto;
+          height: auto;
+        }
 
         .page-item {
             margin: 0 auto;
@@ -152,7 +159,10 @@
       
           }
       
-          
+          li.page-item.gap.disabled a.page-link {
+            border: 2px solid black;
+            color: black;
+          }
       
           li.page-item.active a.page-link {
             background: white;

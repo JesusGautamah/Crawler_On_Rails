@@ -29,14 +29,28 @@
 
     </section>
 <% end %>
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
+    <h1> Ultimas Notícias <h1>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding-top: 10px; width: auto; margin: 0 auto ;">
+    <div class="container">
 
     <%= pagy_bootstrap_nav(@pagy).html_safe %>
   </div>
 </div>
 <br>
 <% @crawled_news.each do |crawled_news| %>
-<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: 45%; margin-bottom: 10px;">
+<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding-top: 10px;width: 45%;margin: 0 auto ;">
     <div class="container">
        <h5><%= crawled_news.title %></h5><br>
         Publicado em:&nbsp;<%= crawled_news.publish_date.strftime('%d/%m/%Y') %><br>
@@ -48,8 +62,9 @@
 
     </div>
   </div>
+  <br>
 <% end %>
-<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: 65%;">
+<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: auto; margin-top: 20px;">
     <div class="container">
 
 
