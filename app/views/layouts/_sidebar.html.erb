@@ -1,5 +1,5 @@
 <div class="fixed-right  sidebutton text-center">
-  <div style="border-radius:360px;width:80px;height:80px;margin: 0 auto;">
+  <div style="border-radius:360px;margin: 0 auto;">
    
 
      
@@ -18,10 +18,10 @@
   
           
 
-          <span> Titulo: <%= text_field_tag(:title_search, params[:title_search])  %></span>
+          <span> Titulo: <%= text_field_tag :title_search, params[:title_search]   %></span>
           <br>
           <br>
-          <span> Texto: <%= text_field_tag(:text_search, params[:text_search] ) %> </span>
+          <span> Texto: <%= text_field_tag :text_search, params[:text_search] %> </span>
           <br>
           <br>
           <span> Data Inicio: <%= date_field_tag(:start, params[:start] ) %> </span>

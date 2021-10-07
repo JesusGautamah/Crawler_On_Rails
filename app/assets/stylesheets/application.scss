@@ -794,12 +794,18 @@
   
     }
 
+    .search  {
+      width:600px;
+      height: 37px;
+    }
+    
+
     @media (max-width: 991px) {
 
     .sidenav {
 
-      height: 70%;
-      width: 100%;
+      height: auto;
+      width: 290px;
       margin-top: 180px;
     }
 
@@ -812,7 +818,7 @@
     }
 
     #hide {
-      font-size: 40px;
+      font-size: 30px;
       margin-left: 20px;
       margin-right: 20px;
     }
@@ -906,8 +912,8 @@
 
   .sidebutton {
 
-    height: 70%;
-    width: 100%;
+    height: auto;
+    width: 200px;
     margin-top: 180px;
   }
 
@@ -941,7 +947,3 @@
 
 
 
-.search  {
-  width:600px;
-  height: 37px;
-}
