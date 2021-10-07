@@ -1,25 +1,48 @@
+<% content_for :hero do %>
+  <section class="hero" id="hero" style="height: 50vh;">
+
+      <div class="container text-center">
+
+            <div class="container text-center border-gradient border-gradient-purple" id="hero-col"  >
+              <div class="row" style="margin-top: -50px; margin-bottom: 50px;">
+                <div class="col text-center">
+                
+                  
+                  
+                  <h1 style=" font-size: 22px;"><%= @crawled_news.title %></h1>
+                  
+
+                </div>
+
+              
+              
+              
+              </div>
+              </div>
+              
+            </div>
+          </div>
+          
+
+      </div>
+
+    </section>
+<% end %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <div class="section-title"> <p style="font-size: 25px;"><%= @crawled_news.title %></p></div>
-  
-  
-</p>
-
-<p>
-  <strong>Publicado em:</strong>
-  <%= @crawled_news.publish_date.strftime('%d/%m/%Y') %>
-</p>
-
-<p>
-  <strong>Coletado em:</strong>
-  <%= @crawled_news.created_at.strftime('%d/%m/%Y') %>
-</p>
 
 <p>
   
   <h4><%= @crawled_news.subtitle %></h4>
 </p>
+
+</div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding-top: 10px; width: auto; margin: 0 auto ;">
+    <div class="container">
+
 
 <p>
 
@@ -35,6 +58,15 @@
   <strong>Origem:</strong>
   <a href="<%= @crawled_news.url %>"><%= @crawled_news.url %></a>
 </p>
+
+<p>
+  <strong>Publicado em:</strong>
+  <%= @crawled_news.publish_date.strftime('%d/%m/%Y') %>
+
+  <strong>Coletado em:</strong>
+  <%= @crawled_news.created_at.strftime('%d/%m/%Y') %>
+</p>
+
 
 
 <%= button_to 'Voltar', crawled_news_index_path, class:"crawler-btn", method:"get" %>

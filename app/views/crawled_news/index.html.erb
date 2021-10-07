@@ -50,9 +50,9 @@
 </div>
 <br>
 <% @crawled_news.each do |crawled_news| %>
-<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding-top: 10px;width: 45%;margin: 0 auto ;">
-    <div class="container">
-       <h5><%= crawled_news.title %></h5><br>
+<div class="container-fluid border-gradient border-gradient-purple text-center box " id="crawler-container" style="padding-top: 10px;width: 45%;margin: 0 auto ;">
+    <div class="container" style="margin: 0 auto;">
+       <h5 class="news-title"><%= crawled_news.title %></h5><br>
         Publicado em:&nbsp;<%= crawled_news.publish_date.strftime('%d/%m/%Y') %><br>
         Coletado em:&nbsp;<%= crawled_news.created_at.strftime('%d/%m/%Y') %><br>
        <%= button_to 'Ler Noticia', crawled_news, class:"crawler-btn", method:"get" %>

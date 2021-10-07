@@ -94,6 +94,9 @@ gem 'pagy'
 # pg search for  full text search
 gem 'pg_search'
 
+# active model serializers to build some json
+gem 'active_model_serializers'
+
 
 #not in dependencies 
 gem 'sass-listen' 

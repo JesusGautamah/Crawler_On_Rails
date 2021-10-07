@@ -16,11 +16,7 @@
 
  @import "bootstrap";
 
-    img {
-        height: 300px;
-        width: 300px;
-
-    }
+    
 
     body {
        background-color: #000;
@@ -35,6 +31,25 @@
   
 
 
+      }
+
+      img {
+
+        height: 300px;
+        width: 500px;
+
+      }
+
+      iframe {
+
+        height: 300px;
+        width: 500px;
+
+      }
+
+      iframe .ghcard-JesusGautamah-1 {
+        height: auto;
+        width: auto;
       }
 
       table {
@@ -232,53 +247,16 @@
     # crawler
     --------------------------------------------------------------*/
 
-    .crawler .box  {
-        border-radius: 30px;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-        transition: all ease-in-out 0.3s;
-        border: 2px solid #743ad5;
-        background: #000;
-        width: 100%;
-        margin: 0 auto;
-        margin-bottom: 15px;
-        padding-top: 40px;
-      }
-  
-      .crawler .box span {
-        display: block;
-        font-size: 28px;
-        font-weight: 700;
-        color: #6D7993;
-      }
-  
-      .crawler .cont{
-        width: 1600px;
-      }
-  
-  
-      .crawler .box h4 {
-        font-size: 24px;
-        font-weight: 600;
-        padding: 0;
-        margin: 20px 0;
-        color: rgba(255, 255, 255, 0.8);
-      }
-  
-      .crawler .box p {
-        color: #aaaaaa;
-        font-size: 15px;
-        margin: 0;
-        padding: 0;
-      }
-  
+    
       .crawler .box:hover {
-        padding: 55px 15px  ;
+        padding: 55px 55px  ;
         box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
       }
+
+      
+
+
   
-      .crawler .box:hover span, .crawler .box:hover h4, .crawler .box:hover p {
-        color: #fff;
-      }
 
       #crawler-container {
 
@@ -524,6 +502,7 @@
     .navbar .dropdown ul {
       display: block;
       position: absolute;
+      height: 150px;
       left: 14px;
       top: calc(100% + 30px);
       margin: 0;
@@ -800,7 +779,7 @@
       justify-content: center;
       flex-direction:column;
       margin-top: 100px;
-      width: 500px;
+      width: 375px;
       height: auto;
       position: fixed;
       z-index: 2;
@@ -824,7 +803,7 @@
     .sidenav {
 
       height: auto;
-      width: 290px;
+      width: 270px;
       margin-top: 180px;
     }
 
@@ -942,6 +921,22 @@
     height: auto;
     width: 200px;
     margin-top: 180px;
+  }
+
+
+
+  img {
+
+    height: 250px;
+    width: 450px;
+
+  }
+
+  iframe {
+
+    height: 250px;
+    width: 450px;
+    
   }
 
   
