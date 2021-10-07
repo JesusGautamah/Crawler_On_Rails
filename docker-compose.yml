@@ -23,7 +23,8 @@ services:
       DB_USER: postgres
       DB_PASS: password
       SIDEKIQ_USERNAME: sidekiq
-      SIDEKIQ_PASSWORD: password       
+      SIDEKIQ_PASSWORD: password
+      REDISTOGO_URL: 'redis://redis:6379/0'
 
   redis:
     image: redis:4.0-alpine

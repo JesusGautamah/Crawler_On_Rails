@@ -31,6 +31,12 @@
 <% end %>
 <p id="notice"><%= notice %></p>
 
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
+</div>
+<br>
+<div class="container-fluid border-gradient border-gradient-purple text-center " id="crawler-container" style="padding: 50px; width: 65%;">
+    <div class="container">
 <div class="row">
 
 
@@ -46,7 +52,7 @@
 
 </div>
 
-<%= pagy_bootstrap_nav(@pagy).html_safe %>
+
 
 
     <% @crawled_news.each do |crawled_news| %>
