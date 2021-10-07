@@ -26,7 +26,21 @@
 ## * **Web Preview https://crawler-news.herokuapp.com/**
 
 ## * **API Consume Preview In Py Notebook https://github.com/JesusGautamah/cn-api-py-nb**
-## **Heroku Deployment Config: Heroku Branch!!**
+
+
+#  **Local Docker Configuration** 
+
+## * **System dependencies**
+1) docker
+2) docker-compose
+3) run
+
+
+                docker-compose up
+
+2) create db, in another terminal run
+
+             docker-compose run web rake db:setup
 
 ## * Heroku Config Vars (https://dashboard.heroku.com/apps/YOUR-APPLICATION-NAME/settings)
 
@@ -58,21 +72,6 @@
 #  **Local Configuration and more information in main branch**
 
 ## **Observações: Utilizar serializer, trabalhar + no Front com css puro, priorizar entregas de produção nas branchs Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook, realizar leitura e analise dos dados carregados, criar seeds para alimentar aplicação ao iniciar o banco de dados.**
-
-#  **Local Docker Configuration** 
-
-## * **System dependencies**
-1) docker
-2) docker-compose
-3) run
-
-
-                docker-compose up
-
-2) create db, in another terminal run
-
-             docker-compose run web rake db:setup
-
 
 
 ## * **APP/API params for mine news data on /news_factory**
