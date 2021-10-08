@@ -40,7 +40,12 @@
 
 2) create db, in another terminal run
 
-             docker-compose run web rake db:setup
+                docker-compose run web rake db:setup
+
+3) not rendering template?
+
+                docker-compose run web rake assets:clobber
+                docker-compose run web rake assets:precompile
 
 ## * Heroku Config Vars (https://dashboard.heroku.com/apps/YOUR-APPLICATION-NAME/settings)
 
