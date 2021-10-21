@@ -75,7 +75,6 @@
                 params[:full_text] # full text search
 
 
-
 ## * **API endpoints**
 
                 http://localhost:3000/api/v1/crawled_news + params
