@@ -1,6 +1,5 @@
 # **Crawler On Rails**
 
-### **Projeto criado para teste da empresa Data Science Bragade.**
 ### **Crawler adicionado ao Active Jobs com Sidekiq e Redis para processos em Background.**
 ### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
 ### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
@@ -8,12 +7,8 @@
 
 ## * **Routes**
 1) root on crawled_news index + filters (app and api) 
-2) crawled_news show (appo only)
+2) crawled_news show (app only)
 3) mine information on /news_factory (app and api)
-
-
-
-
 
 
 ## * **Ruby 2.7**
@@ -63,11 +58,6 @@
                   database: crawler_on_rails_production
                   username: crawler_on_rails
                   password: <%= ENV['CRAWLER_ON_RAILS_DATABASE_PASSWORD'] %>
-
-
-
-
-
 
 
 ## * **Database creation**
