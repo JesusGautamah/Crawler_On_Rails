@@ -62,17 +62,6 @@
                 heroku logs --tail -a
 
 
-## * **Sidekiq Web View**
-
-### in route /sidekiq
-### use your heroku config vars sidekiq login
-
-## * **Sidekiq Web View Preview**
-
-### in route  https://crawler-news.herokuapp.com/sidekiq
-### Username: Admin
-### Password: 0F2D2FA54BE36031D46155C70A2A2458
-
 #  **Local Configuration and more information in main branch**
 
 ## **Observações: Utilizar serializer, trabalhar + no Front com css puro, priorizar entregas de produção nas branchs Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook, realizar leitura e analise dos dados carregados, criar seeds para alimentar aplicação ao iniciar o banco de dados.**
