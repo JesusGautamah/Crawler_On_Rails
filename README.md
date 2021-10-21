@@ -4,20 +4,13 @@
 ### **Ao invés de interface de linha de comandos, foi adicionado a versão api com parametros, para alimentar minha futura aplicação flutter para portfolio.**
 ### **Pagina Index Contém somente algumas informações das noticias, para vizualisar completamente, clique no botão SHOW**
 
-### **Pagina http://mds.gov.br/area-de-imprensa/noticias não está disponivel(offline), crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
-
-
-## **Observações: Utilizar serializer, trabalhar + no Front com css puro, priorizar entregas de produção nas branchs Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook, realizar leitura e analise dos dados carregados.**
+### **Crawler puxando diversas paginas de https://www.gov.br/turismo/pt-br/assuntos/noticias**
 
 
 ## * **Routes**
 1) root on crawled_news index + filters (app and api) 
 2) crawled_news show (app only)
 3) mine information on /news_factory (app and api)
-
-
-
-
 
 
 ## * **Ruby 2.7**
@@ -59,12 +52,7 @@
 
 ## * Heroku Monitor (HEROKU CLI)
 
-                heroku logs --tail -a
-
-
-#  **Local Configuration and more information in main branch**
-
-## **Observações: Utilizar serializer, trabalhar + no Front com css puro, priorizar entregas de produção nas branchs Docker e Heroku, Atualizar readme, heroku readme e docker readme, realizar testes nos controllers, melhorar saída de dados no py notebook, realizar leitura e analise dos dados carregados, criar seeds para alimentar aplicação ao iniciar o banco de dados.**
+                heroku logs --tail -a <YOUR-HEROKU-APP-NAME>
 
 
 ## * **APP/API params for mine news data on /news_factory**
